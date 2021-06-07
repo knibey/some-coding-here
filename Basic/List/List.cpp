@@ -21,11 +21,11 @@ int List::max_size() const {
 }
 
 void List::erase(int index) {
-    array[index] = 0;
+    this.array[index] = 0;
 }
 
 void List::insert(int value, int index) {
-    array[index]=value;
+    this.array[index]=value;
 }
 
 int List::find(int value) const {
