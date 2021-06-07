@@ -1,6 +1,9 @@
 #include "List.hpp"
 
 List::List(int capacity=100, double multiplier=1.05) {
+        this->capacity = capacity;
+        this->multiplier = multiplier;
+        this->current = 0;
         array = (int*)malloc(capacity*sizeof(int));
 
         if ( array == NULL ) {
@@ -21,15 +24,15 @@ int List::max_size() const {
 }
 
 void List::erase(int index) {
-    this.array[index] = 0;
+    array[index] = 0;
 }
 
 void List::insert(int value, int index) {
-    this.array[index]=value;
+    array[index]=value;
 }
 
 int List::find(int value) const {
-    return this->[index]=value;
+    return array[index]=value;
 }
 
 void List::push_back(int value) {
