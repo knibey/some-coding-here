@@ -32,7 +32,12 @@ void List::insert(int value, int index) {
 }
 
 int List::find(int value) const {
-    return array[index]=value;
+    for ( int i = 0; i < this->size(); i++ ) {
+        if ( this->array[i] == value ) {
+            return i;
+        }
+    }
+    return -1;
 }
 
 void List::push_back(int value) {
@@ -55,11 +60,11 @@ void List::push_back(int value) {
 }
 
 int List::pop_back() {
-        if ( current == 0 ) {
+        if ( this->current == 0 ) {
                 throw ZeroLenException();
         }
 
-        current -= 1;
+        this->current -= 1;
         return array[current];
 }
 
@@ -68,7 +73,10 @@ void List::sort() {
 }
 
 int List::operator[](int index) const {
-
+        if ( this->index >= this->len ) {
+                throw exception();
+        }
+        return this->content[index];
 }
 
 bool List::operator==(const List& other) const {

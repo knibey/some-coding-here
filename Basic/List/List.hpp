@@ -34,4 +34,4 @@ class List {
 
 std::ostream& operator<<(std::ostream& out, const List& list);
 
-#endif //LIST_H
+#endif //
