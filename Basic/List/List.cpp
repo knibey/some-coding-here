@@ -24,9 +24,28 @@ int List::max_size() const {
 }
 
 void List::erase(int index) {
+        for ( int i = this->index; i < this->capacity; i++ ) {
+                this->array[index] = this->array[index+1];
+                this->index += 1;
+        }
+
+        this->array[capacity] = 0;
 }
 
 void List::insert(int value, int index) {
+        if ( index > this->capacity ) {
+                int newCapacity = this->capacity * this->multiplier;
+                int* newArray = (int*)realloc(array, newCapacity*sizeof(int));
+
+                if ( newArray == NULL ) {
+                        throw OutOfMemoryException();
+                }
+
+                this->capacity = newCapacity;
+                this->array = newArray;
+        }
+
+        this->array[index] = value;
 }
 
 int List::find(int value) const {
