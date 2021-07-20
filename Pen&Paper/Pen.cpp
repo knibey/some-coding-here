@@ -5,7 +5,7 @@ Pen::Pen(int inkCapacity = 4096) {
     this->inkAmount = inkCapacity;
 }
 
-~Pen() {}
+Pen::~Pen() {}
 
 int Pen::getInkAmount() const {
     return this->inkAmount;

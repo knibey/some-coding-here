@@ -14,11 +14,11 @@
 
 #include "Date.hpp"
 
-InvalidDate(const std::string& text) : text(text) {
+Date::InvalidDate(const std::string& text) : text(text) {
     this->text = text;
 }
 
-void validate(int day, int month, int year) {
+void Date::validate(int day, int month, int year) {
     if ( month < 0 || month > 12 ) {
         throw InvalidDate();
     }
@@ -34,22 +34,22 @@ void validate(int day, int month, int year) {
     }
 }
 
-Date(int day=1, int month=1, int year=1970) {
+Date::Date(int day=1, int month=1, int year=1970) {
     this->day = day;
     this->month = month;
     this->year = year;
 }
-~Date() {}
+Date::~Date() {}
 
-int getDay() const {
+int Date::getDay() const {
     return this->day;
 }
 
-int getMonth() const {
+int Date::getMonth() const {
     return this->month;
 }
 
-int getYear() const {
+int Date::getYear() const {
     return this->year;
 }
 

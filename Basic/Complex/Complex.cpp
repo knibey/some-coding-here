@@ -5,45 +5,45 @@ Complex(double real=0, double imaginary=0) {
 
 ~Complex() {}
 
-double getReal() const {
+double Complex::getReal() const {
         return this->real;
 }
 
-double getImaginary() const {
+double Complex::getImaginary() const {
         return this->imaginary;
 }
 
-bool operator==(const Complex& other) const {
+bool Complex::operator==(const Complex& other) const {
         return this->real == other.real && this->imaginary == other.imaginary;
 }
 
-bool operator!=(const Complex& other) const {
+bool Complex::operator!=(const Complex& other) const {
         return !(*this == other);
 }
 
-void operator+=(const Complex& other) {
+void Complex::operator+=(const Complex& other) {
         this->re += other.re;
         this->im += other.im;
 }
 
-void operator-=(const Complex& other) {
+void Complex::operator-=(const Complex& other) {
         this->re -= other.re;
         this->im -= other.im;
 }
 
-Complex operator+(const Complex& other) const {
+Complex Complex::operator+(const Complex& other) const {
         Complex c = *this;
         complexIncrement(&c, other);
         return c;
 }
 
-Complex operator-(const Complex& other) const {
+Complex Complex::operator-(const Complex& other) const {
         Complex c = *this;
         complexDecrement(&c, other);
         return c;
 }
 
-Complex operator*(const Complex& other) const {
+Complex Complex::operator*(const Complex& other) const {
         double tempRe = this->re * other.re - this->im * other.im;
         double tempIm = this->re * other.im + this->im * other.re;
 

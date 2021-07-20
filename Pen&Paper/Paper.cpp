@@ -10,7 +10,7 @@ int Paper::getMaxSymbols() const {
     return this->maxSysmbols;
 }
 
-int getSymbols() const {
+int Paper::getSymbols() const {
     return this->symbols;
 }
 
@@ -26,7 +26,7 @@ void Paper::addContent(const std::string& message) {
     this->content += message;
 }
 
-void show() const {
+void Paper::show() const {
     return this->content;
 }
 
