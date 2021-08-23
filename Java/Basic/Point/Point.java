@@ -31,6 +31,10 @@ public class Point implements Cloneable {
         return x == other.x && y == other.y;
     }
 
+    public boolean notequals(Point other) {
+        return !(x == other.x && y == other.y);
+    }
+
     public String toString() {
         return "(" + x + ", " + y + ")";
     }

@@ -1,0 +1,1 @@
+public class CloneNotSupportedException extends Exception {}
