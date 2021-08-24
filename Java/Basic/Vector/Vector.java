@@ -26,7 +26,7 @@ class Vector {
 	}
 
 	public double len() {
-		return hypot(x, y);
+		return Math.hypot(x, y);
 	}
 
 	public boolean equals(Vector other) {
