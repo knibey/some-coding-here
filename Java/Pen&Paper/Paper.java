@@ -1,18 +1,26 @@
 public class Paper {
     private StringBuffer content;
     private int maxSymbols;
+    private int symbols;
 
     public Paper(int maxSymbols) {
         this.maxSymbols = maxSymbols;
+        this.symbols = 0;
         content = new StringBuffer();
     }
 
     public Paper() {
-        this(4096); // call Paper(int)
+        this.maxSymbols = 4096;
+        this.symbols = 0;
+        content = new StringBuffer();
     }
 
     public int getMaxSymbols() {
-        return maxSymbols;
+        return this.maxSymbols;
+    }
+
+    public int getSymbols() {
+        return this.symbols;
     }
 
     public void addContent(String message) throws OutOfSpaceException {
@@ -28,6 +36,6 @@ public class Paper {
         content.append(message);
     }
     public void show() {
-        System.out.println(content);
+        System.out.println(content.toString());
     }
 }

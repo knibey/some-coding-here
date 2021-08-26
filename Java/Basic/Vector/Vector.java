@@ -7,6 +7,11 @@ class Vector {
         this.y = y;
     }
 
+    public Vector() {
+    	this.x = 0;
+    	this.y = 0;
+    }
+
 	public ~Vector() {}
 
 	public double getX() {
@@ -34,7 +39,7 @@ class Vector {
 	}
 
 	public boolean notequals(Vector other) {
-        return !(*this == other);
+        return !(this == other);
     }
 
     public void increment(Vector other) {

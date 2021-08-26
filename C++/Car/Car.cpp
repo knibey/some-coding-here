@@ -51,7 +51,7 @@ void Car::drive(const Point& destination) {
 }
 
 void Car::drive(double x, double y) {
-    this->drive(Point(x, y)); // FEW QUESTIONS BOUT IT
+    this->drive(Point(x, y));
 }
 
 void Car::refill(double fuel) {
@@ -63,5 +63,6 @@ void Car::refill(double fuel) {
 }
 
 std::ostream& operator<<(std::ostream& out, const Car& car) {
-
+    out << car.getName() << "(Fuel: " << car.getFuelAmount() << '/' << car.getFuelCapacity() << ", " << car.getFuelConsumption << "per mile)" << "is at" << car.getLocation();
+    return out;
 }

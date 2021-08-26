@@ -35,7 +35,7 @@ void Gun::prepare() {
 }
 
 void Gun::reload() {
-      this->amount = capacity;
+      this->amount = this->capacity;
 }
 
 void Gun::shoot() {
