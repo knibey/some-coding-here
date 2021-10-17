@@ -4,9 +4,12 @@ Vehicle::Vehicle(double engineSize, int numberOfWheels, const std::string& name)
     this->engineSize = engineSize;
     this->numberOfWheels = numberOfWheels;
     this->name = name;
+    std::cout << __PRETTY_FUNCTION__ << std::endl;
 };
 
-Vehicle::~Vehicle() {};
+Vehicle::~Vehicle() {
+    std::cout << __PRETTY_FUNCTION__ << std::endl;
+};
 
 double Vehicle::getEngineSize() const {
     return this->engineSize;
@@ -37,5 +40,5 @@ void Vehicle::drive() const{
 };
 
 std::ostream& operator<<(std::ostream& out, const Vehicle& vehicle) {
-    out << vehicle.getName() << " has " << vehicle.getNumberOfWheels() << " wheels and " << vehicle.getEngineSize() << " engine capacity";
+    out << vehicle.getName() << " has " << vehicle.getNumberOfWheels() << " wheel(s) and " << vehicle.getEngineSize() << " engine capacity";
 };

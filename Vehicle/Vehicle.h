@@ -9,8 +9,8 @@ class Vehicle {
         int numberOfWheels;
         std::string name;
     public:
-        Vehicle(double engineSize=5.7, int numberOfWheels=4, const std::string& name="Tundra");
-        ~Vehicle();
+        Vehicle(double engineSize=1, int numberOfWheels=2, const std::string& name="Vehicle");
+        virtual ~Vehicle();
 
         double getEngineSize() const;
         int getNumberOfWheels() const;
