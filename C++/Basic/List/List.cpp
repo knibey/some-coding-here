@@ -1,15 +1,15 @@
 #include "List.hpp"
 
-List::List(int capacity=100, double multiplier=1.05) {
-        this->capacity = capacity;
-        this->multiplier = multiplier;
-        this->current = 0;
-        this->array = (int*)malloc(capacity*sizeof(int));
+        List::List(int capacity=100, double multiplier=1.05) {
+                this->capacity = capacity;
+                this->multiplier = multiplier;
+                this->current = 0;
+                this->array = (int*)malloc(capacity*sizeof(int));
 
-        if ( array == NULL ) {
-                throw OutOfMemoryException();
+                if ( array == NULL ) {
+                        throw OutOfMemoryException();
+                }
         }
-}
 
 List::~List() {
     free(array);
